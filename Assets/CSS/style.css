@@ -11,17 +11,28 @@ header{
     width: 100%;
     height: 250px;
     background-color: rgb(27, 27, 88);
+    background-image: linear-gradient(rgb(0, 238, 255),blue,rgb(0, 238, 255));
+    border: 10px solid whitesmoke;
+}
+
+#city{
     border: 10px solid whitesmoke;
 }
 
 
+#weatherContainer{
+    display: flex;
+    width: 100%;
+    height: 50vh;
+    border: solid 10px whitesmoke;
+}
 #inputContainer{
-    display: block;
     text-align: center;
     width: 30%;
-    height: 100vh;
-    background-color: rgb(223, 184, 134);
-    border: solid 10px whitesmoke;
+    height: 50vh;
+    border: 1px solid black;
+    background-color: rgb(223, 184, 134)
+    
 }
 
 #cityNameInput{
@@ -43,6 +54,22 @@ button:active {
   }
 #rangeWeather{
     width: 100%;
-    height: 500px;
+    height: 50vh;
     background-color: whitesmoke;
+    border: 1px solid black;
+}
+ul{
+    color: white;
+}
+#fiveDayContainer{
+    display: flex;
+    width: 100%;
+    height: 50vh;
+    border: solid 10px whitesmoke;
+
+}
+#dayByDay{
+    width: 100%;
+    border: 1px solid black;
+    background-color: red;
 }
