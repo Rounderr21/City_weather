@@ -3,6 +3,7 @@ let cityNameInput = document.getElementById('cityNameInput');
 let search = document.getElementById('inputContainer');
 let submitEl = document.getElementById('submit');//button on the html
 let fiveDayForcast = document.getElementById('rangeWeather');
+let dayOne = document.getElementById('dayOne');
 
 //*need to get the adi city.name and then get the list array for 5 days only*//
 
@@ -32,12 +33,22 @@ submitEl.addEventListener('click', function(){
         .then(function (data) {
         console.log(data.list);//this is the list of arrays for the city that was provided by the lat and lon.
 
-        //will need to make a for loop for 5 of the arrays i need.
+        //this is to put the current day into the right side of the screen
         let temperatureFahrenheit = (data.list[0].main.temp - 273.15) * 9/5 + 32;
-            fiveDayForcast.append('Temp: ' + temperatureFahrenheit.toFixed(2) + '°F');
-            fiveDayForcast.append('wind: ' + data.list[0].wind.speed + 'MPH');
-            fiveDayForcast.append('Humidity: ' + data.list[0].main.humidity + '%');
+        fiveDayForcast.append('Temp: ' + temperatureFahrenheit.toFixed(2) + '°F');
+        fiveDayForcast.append('wind: ' + data.list[0].wind.speed + 'MPH');
+        fiveDayForcast.append('Humidity: ' + data.list[0].main.humidity + '%');
 
+        //this is to make the remaning days appear on the bottom, need to change it to append it to the fivedaycontainer
+        for(var i = 1; i < 6; i++){
+        //will need to make a for loop for 5 of the arrays i need.
+        let dayInfo = document.createElement('li')
+        //fiveDayForcast = dayInfo;
+        let temperatureFahrenheit = (data.list[i].main.temp - 273.15) * 9/5 + 32;
+            fiveDayForcast.append('Temp: ' + temperatureFahrenheit.toFixed(2) + '°F');
+            fiveDayForcast.append('wind: ' + data.list[i].wind.speed + 'MPH');
+            fiveDayForcast.append('Humidity: ' + data.list[i].main.humidity + '%');
+        }
         });
     });
 });
