@@ -16,7 +16,7 @@ submitEl.addEventListener('click', function(){
  
 
 
-    let requestUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + userInput + '&limit=5&appid=2069a5601143bb130db28083a5a1536c'; //use this as the API for the weather
+    let requestUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + userInput + '&limit=5&appid=2069a5601143bb130db28083a5a1536c'; //use this as the API for the weather
     fetch(requestUrl)
     .then(function (response){
         return response.json();
