@@ -22,6 +22,8 @@ header{
 
 #weatherContainer{
     display: flex;
+    flex-direction: row;
+    align-items: end;
     width: 100%;
     height: 50vh;
     border: solid 10px whitesmoke;
@@ -36,13 +38,13 @@ header{
 }
 
 #cityNameInput{
-    justify-content: center;
     text-align: center;
     width: 300px;
     font-size: 25px;
     height: 50px;
     margin-top: 25px;
     background-color: whitesmoke;
+    resize: both;
 }
 #submit{
     margin-top: 25px;
@@ -53,23 +55,70 @@ button:active {
     transform: scale(0.95);
   }
 #rangeWeather{
+    display: inline-block;
     width: 100%;
     height: 50vh;
     background-color: whitesmoke;
     border: 1px solid black;
+    font-size: 50px;
+
+    
 }
 ul{
     color: white;
+    background-color: whitesmoke;
+    list-style-type: none;
+    width: 100%;
+    height: 90%;
+}
+ul img{
+   width: 150px;
+}
+h2{
+    display: none;
+    background-color: whitesmoke;
+    color: black;
+}
+h3{
+    background-color: whitesmoke;
+    color: black;
+}
+li{
+    background-color: whitesmoke;
+    color: black;
 }
 #fiveDayContainer{
     display: flex;
     width: 100%;
     height: 50vh;
     border: solid 10px whitesmoke;
+    background-color: red;
+    color: white;
+    font-size: 25px;
 
 }
 #dayByDay{
     width: 100%;
     border: 1px solid black;
-    background-color: red;
+    background-color: whitesmoke;
+    color: white;
+    font-size: 25px;
+    display: inline-block;
+    justify-content: space-between;
+}
+
+.data{
+    background-color: whitesmoke;
+}
+p{
+    background-color: whitesmoke;
+}
+.day-container {
+    background-color: whitesmoke;
+    color: black;
+    display: inline-block;
+    width: 18%;
+    height: 40vh;
+    border: 1px solid black;
+
 }
