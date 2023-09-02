@@ -13,15 +13,19 @@
     <!--This secion can be used as either the big picture format that the weather can be used per block maybe-->
     <section id="weatherContainer">
       <div id="inputContainer">
-        <input id="cityNameInput" type="text" placeholder="City" /><br /> 
+        <input id="cityNameInput" type="text" placeholder="City" /><br />
         <button type="button" id="submit">Search</button>
+        <hr />
+
+        <h1 id="previousSearch">Previous Searches:</h1>
+        <div id="previousSearchButtons"></div>
       </div>
       <div id="rangeWeather"></div>
     </section>
 
-    <section  id="fiveDayContainer">
-    <div id="dayByDay">
-      <h2 id="5Day">5-Day Forcast:</h2>
+    <section id="fiveDayContainer">
+      <div id="dayByDay">
+        <h2 id="5Day">5-Day Forcast:</h2>
       </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
