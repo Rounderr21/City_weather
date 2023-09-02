@@ -11,22 +11,18 @@ let searchButtons = document.getElementById("previousSearchButtons");
 let time = dayjs().format(" (MM/DD/YYYY)");
 //*need to get the adi city.name and then get the list array for 5 days only*//
 
+//button listener that creates user input into a value then sends it to function getData
 
-//function that creates user input into a value then sends it to function getData
-function clickButton() {
   submitEl.addEventListener("click", function () {
     let userInput = cityNameInput.value;
     console.log(userInput); //user input that was in the input tag above search
     getData(userInput);
   });
-}
 
 //function retrives data from API, then uses userinput to find correct city data
 function getData(userInput) {
   let requestUrl =
-    "https://api.openweathermap.org/geo/1.0/direct?q=" +
-    userInput +
-    "&limit=5&appid=2069a5601143bb130db28083a5a1536c"; //use this as the API for the weather
+    "https://api.openweathermap.org/geo/1.0/direct?q=" + userInput + "&limit=5&appid=2069a5601143bb130db28083a5a1536c"; //use this as the API for the weather
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
@@ -37,11 +33,7 @@ function getData(userInput) {
       console.log(data);
 
       let Url =
-        "https://api.openweathermap.org/data/2.5/forecast?lat=" +
-        lat +
-        "&lon=" +
-        lon +
-        "&appid=2069a5601143bb130db28083a5a1536c"; //will use this to get the city weather
+        "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=2069a5601143bb130db28083a5a1536c"; //will use this to get the city weather
       fetch(Url)
         .then(function (response) {
           return response.json();
