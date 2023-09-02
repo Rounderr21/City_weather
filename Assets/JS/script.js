@@ -11,8 +11,8 @@ let searchButtons = document.getElementById("previousSearchButtons");
 let time = dayjs().format(" (MM/DD/YYYY)");
 //*need to get the adi city.name and then get the list array for 5 days only*//
 
-clickButton();
 
+//function that creates user input into a value then sends it to function getData
 function clickButton() {
   submitEl.addEventListener("click", function () {
     let userInput = cityNameInput.value;
@@ -20,6 +20,8 @@ function clickButton() {
     getData(userInput);
   });
 }
+
+//function retrives data from API, then uses userinput to find correct city data
 function getData(userInput) {
   let requestUrl =
     "https://api.openweathermap.org/geo/1.0/direct?q=" +
@@ -179,11 +181,15 @@ function getData(userInput) {
             dayByDay.appendChild(dayContainer);
           }
 
+          //starts this function
           previousSearches();
         });
     });
 }
 
+//function that makes the div appear in the input side of the page
+//it creates a new button with id
+// once that button is clicked its value is inputed back in to getData function
 function previousSearches() {
   previousSearch.style.display = "block";
   searchButtons.style.display = "block";
