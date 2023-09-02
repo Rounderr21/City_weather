@@ -1,124 +1,142 @@
-*{
-    background-color: black;
-}
-header{
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    color: whitesmoke;
-    width: 100%;
-    height: 250px;
-    background-color: rgb(27, 27, 88);
-    background-image: linear-gradient(rgb(0, 238, 255),blue,rgb(0, 238, 255));
-    border: 10px solid whitesmoke;
+:root {
+  --tiffanyBlue: #3ac5d0;
+  --blueGrotto: #2187b0;
+  --pewter: #c9d8d0;
+  --slate: #7c9da0;
 }
 
-#city{
-    border: 10px solid whitesmoke;
+* {
+  background-color: var(--tiffanyBlue);
+}
+header {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: whitesmoke;
+  width: 100%;
+  height: 250px;
+  background-color: rgb(27, 27, 88);
+  background-image: linear-gradient(#3ac5d0, #2187b0, #3ac5d0);
+  border: 10px solid whitesmoke;
 }
 
-
-#weatherContainer{
-    display: flex;
-    flex-direction: row;
-    align-items: end;
-    width: 100%;
-    height: 50vh;
-    border: solid 10px whitesmoke;
-}
-#inputContainer{
-    text-align: center;
-    width: 30%;
-    height: 50vh;
-    border: 1px solid black;
-    background-color: rgb(223, 184, 134)
-    
+#city {
+  border: 10px solid whitesmoke;
 }
 
-#cityNameInput{
-    text-align: center;
-    width: 300px;
-    font-size: 25px;
-    height: 50px;
-    margin-top: 25px;
-    background-color: whitesmoke;
-    resize: both;
+#weatherContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  width: 100%;
+  height: 1000px;
+  border: solid 10px whitesmoke;
 }
-#submit{
-    margin-top: 25px;
-    font-size: 50px;
-    background-color: whitesmoke;
+#inputContainer {
+  text-align: center;
+  width: 30%;
+  height: 1000px;
+  border: 1px solid black;
+  background-color: rgb(218, 194, 163);
+}
+
+#cityNameInput {
+  text-align: center;
+  width: 200px;
+  font-size: 25px;
+  height: 50px;
+  margin-top: 25px;
+  background-color: whitesmoke;
+  resize: both;
+}
+#submit {
+  margin-top: 25px;
+  font-size: 50px;
+  background-image: linear-gradient(45deg, #7c9da0, #c9d8d0, #7c9da0);
+}
+
+#pastButtons {
+  width: 172px;
+  height: 60px;
+  font-size: 30px;
+  margin: 2px;
+  background-image: linear-gradient(45deg, #7c9da0, #c9d8d0, #7c9da0);
 }
 button:active {
-    transform: scale(0.95);
-  }
-#rangeWeather{
-    display: inline-block;
-    width: 100%;
-    height: 50vh;
-    background-color: whitesmoke;
-    border: 1px solid black;
-    font-size: 50px;
-
-    
-}
-ul{
-    color: white;
-    background-color: whitesmoke;
-    list-style-type: none;
-    width: 100%;
-    height: 90%;
-}
-ul img{
-   width: 150px;
-}
-h2{
-    display: none;
-    background-color: whitesmoke;
-    color: black;
-}
-h3{
-    background-color: whitesmoke;
-    color: black;
-}
-li{
-    background-color: whitesmoke;
-    color: black;
-}
-#fiveDayContainer{
-    display: flex;
-    width: 100%;
-    height: 50vh;
-    border: solid 10px whitesmoke;
-    background-color: red;
-    color: white;
-    font-size: 25px;
-
-}
-#dayByDay{
-    width: 100%;
-    border: 1px solid black;
-    background-color: whitesmoke;
-    color: white;
-    font-size: 25px;
-    display: inline-block;
-    justify-content: space-between;
+  transform: scale(0.95);
 }
 
-.data{
-    background-color: whitesmoke;
+#previousSearch {
+  display: none;
+  background-color: rgb(218, 194, 163);
+  color: black;
 }
-p{
-    background-color: whitesmoke;
+#previousSearchButtons {
+  display: none;
+  background-color: rgb(218, 194, 163);
+  color: whitesmoke;
+}
+#rangeWeather {
+  display: inline-block;
+  width: 100%;
+  height: 1000px;
+  background-color: var(--blueGrotto);
+  border: 1px solid black;
+  font-size: 40px;
+}
+ul {
+  background-color: var(--blueGrotto);
+  list-style-type: none;
+  width: 70%;
+  height: 90%;
+}
+ul img {
+  width: 150px;
+}
+h2 {
+  display: none;
+  background-color: whitesmoke;
+  color: black;
+}
+h3 {
+  background-color: var(--blueGrotto);
+  color: var(--pewter);
+}
+li {
+  background-color: var(--blueGrotto);
+  color: var(--pewter);
+}
+#fiveDayContainer {
+  display: flex;
+  width: 100%;
+  height: 1000px;
+  border: solid 10px whitesmoke;
+  font-size: 25px;
+}
+#dayByDay {
+  width: 100%;
+  border: 1px solid black;
+  background-color: var(--slate);
+  font-size: 25px;
+  display: inline-block;
+  justify-content: space-between;
+}
+
+.data {
+  background-color: whitesmoke;
+}
+p {
+  background-color: var(--blueGrotto);
 }
 .day-container {
-    background-color: whitesmoke;
-    color: black;
-    display: inline-block;
-    width: 18%;
-    height: 40vh;
-    border: 1px solid black;
-
+  background-color: var(--blueGrotto);
+  color: var(--pewter);
+  display: inline-block;
+  width: 18%;
+  height: 40vh;
+  border: 1px solid black;
+  margin-left: 38.4px;
+  margin-top: 10px;
 }
