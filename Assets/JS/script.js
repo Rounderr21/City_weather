@@ -2,9 +2,9 @@
 let cityNameInput = document.getElementById("cityNameInput");
 let search = document.getElementById("inputContainer");
 let submitEl = document.getElementById("submit"); //button on the html
-let fiveDayForcast = document.getElementById("rangeWeather");
+let todayDayForcast = document.getElementById("rangeWeather");
 let dayByDay = document.getElementById("dayByDay");
-let FiveDay = document.getElementById("5Day");
+//let fiveDay = document.getElementById("fiveDay");
 let previousSearch = document.getElementById("previousSearch");
 let searchButtons = document.getElementById("previousSearchButtons");
 
@@ -12,6 +12,9 @@ let time = dayjs().format(" (MM/DD/YYYY)");
 //*need to get the adi city.name and then get the list array for 5 days only*//
 
 //button listener that creates user input into a value then sends it to function getData
+document.addEventListener("DOMContentLoaded", function () {
+  // Your code here
+
 
   submitEl.addEventListener("click", function () {
     let userInput = cityNameInput.value;
@@ -101,9 +104,8 @@ function getData(userInput) {
           };
 
           //added empty elements to make sure that old values are taken off of screen when user puts in new city.
-          fiveDayForcast.innerHTML = "";
+          todayDayForcast.innerHTML = "";
           dayByDay.innerHTML = "";
-          previousSearch.innerHTML = "";
           searchButtons.innerHTML = "";
           //this tells us what icon number it is and what it will show//
           let weatherID = data.list[0].weather[0].id;
@@ -131,9 +133,11 @@ function getData(userInput) {
 `;
           currentDayList.prepend(weatherIcon); // Add the weather icon as the first item in the list
 
-          fiveDayForcast.appendChild(currentDayList);
+          todayDayForcast.appendChild(currentDayList);
 
-          FiveDay.style.display = "block";
+          let fiveDay = document.createElement('h2');
+          fiveDay.textContent = '5-Day Forcast:';
+          dayByDay.appendChild(fiveDay);
 
           //this is to make the remaning days appear on the bottom, need to change it to append it to the fivedaycontainer
           for (var i = 1; i < 6; i++) {
@@ -179,20 +183,29 @@ function getData(userInput) {
     });
 }
 
-//function that makes the div appear in the input side of the page
-//it creates a new button with id
-// once that button is clicked its value is inputed back in to getData function
 function previousSearches() {
   previousSearch.style.display = "block";
   searchButtons.style.display = "block";
-  let previousSearchButtons = document.createElement("button");
-  previousSearchButtons.setAttribute("id", "pastButtons");
-  previousSearchButtons.textContent = cityNameInput.value;
+  
+  // Get the value of the input
+  const inputValue = cityNameInput.value;
 
-  previousSearchButtons.addEventListener("click", function (event) {
-    const textData = event.target.textContent;
-    getData(textData);
-  });
+  // Check if a button with the same value already exists
+  const existingButton = document.querySelector(`button[id="pastButtons"][data-value="${inputValue}"]`);
 
-  search.append(previousSearchButtons);
+  // If it doesn't exist, create a new button
+  if (!existingButton) {
+    let previousSearchButtons = document.createElement("button");
+    previousSearchButtons.setAttribute("id", "pastButtons");
+    previousSearchButtons.setAttribute("data-value", inputValue); // Set a custom attribute to store the value
+    previousSearchButtons.textContent = inputValue;
+
+    previousSearchButtons.addEventListener("click", function (event) {
+      const textData = event.target.textContent;
+      getData(textData);
+    });
+
+    search.appendChild(previousSearchButtons);
+  }
 }
+});
