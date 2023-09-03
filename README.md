@@ -21,7 +21,7 @@ Project is located at this URL: https://rounderr21.github.io/City_weather/
 
 Screenshot of the Project:
 
-![Alt text](//Assets/Images/First_look_at_startup.png "Inital page of Project")
+![Alt text](/Assets/Images/First_look_at_startup.png "Inital page of Project")
 
 ![Alt text](/Assets/Images/One_city_typed_in.png "Once city was typed in and is showing the forecast")
 
